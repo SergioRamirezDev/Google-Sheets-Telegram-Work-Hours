@@ -179,14 +179,6 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
         }
     }
 
-    /*
-        Commands
-        entrada - Entrada
-        salida - Salida
-        horadecomida - Hora de comida
-        descanso - Descanso
-    */
-
     bot.onText(/\/echo (.+)/, (msg, match) => {
         const chatId = msg.chat.id;
         const resp = match[1];
@@ -223,11 +215,6 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             default:
                 var st = await bot.sendMessage(msg.chat.id, `Porfavor selecciona desde el menu.`);
                 var ph = await bot.sendPhoto(msg.chat.id, "./menu.jpg")
-                /*setTimeout(() => {
-                    bot.deleteMessage(msg.chat.id, st.message_id);
-                    bot.deleteMessage(msg.chat.id, ph.message_id)
-                }, 5000);
-                bot.deleteMessage(msg.chat.id, msg.message_id)*/
                 break;
         }
     });
