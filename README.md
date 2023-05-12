@@ -2,8 +2,8 @@
 This is a chat bot that take the status of the employee and save the time in a google spreedsheet.
 
 <p align="center">
-  <img src="preview.jpg" width="350" title="Start Chat Bot">
-  <img src="preview2.jpg" width="350" alt="Chat Bot Option">
+  <img src="preview.jpg" width="250" title="Start Chat Bot">
+  <img src="preview2.jpg" width="250" alt="Chat Bot Option">
   <img src="preview3.png" width="350" alt="Google SpreedSheet">
 </p>
 
