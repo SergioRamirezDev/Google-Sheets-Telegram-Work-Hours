@@ -1,0 +1,19 @@
+{
+  "name": "ticketon-horario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.1",
+    "dotenv": "^16.0.3",
+    "google-spreadsheet": "^3.3.0",
+    "googleapis": "^118.0.0",
+    "moment": "^2.29.4",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
