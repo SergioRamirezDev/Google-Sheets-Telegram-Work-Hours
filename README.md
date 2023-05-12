@@ -1,11 +1,11 @@
 ## Google Sheet Telegram Work Hours
 This is a chat bot that take the status of the employee and save the time in a google spreedsheet.
 
-![Screenshot](preview.jpg)
-
-![Screenshot](preview2.jpg)
-
-![Screenshot](preview3.jpg)
+<p align="center">
+  <img src="preview.jpg" width="350" title="Start Chat Bot">
+  <img src="preview2.jpg" width="350" alt="Chat Bot Option">
+  <img src="preview3.png" width="350" alt="Google SpreedSheet">
+</p>
 
 ## Installation
 
