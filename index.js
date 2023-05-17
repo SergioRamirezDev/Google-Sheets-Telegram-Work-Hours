@@ -83,7 +83,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
                             {
                                 duplicateSheet: {
                                     newSheetId: week,
-                                    newSheetName: date,
+                                    newSheetName: `Week ${week}`,
                                     sourceSheetId: copytheme.data.sheetId
                                 }
                             }, {
@@ -92,6 +92,35 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
                                 }
                             }
                         ]
+                    }
+                });
+
+                await spreadsheet.values.batchUpdate({
+                    spreadsheetId: workhoursheetid,
+                    valueInputOption: "USER_ENTERED",
+                    requestBody: {
+                        data: [{
+                            range: `Week ${week}!K1`,
+                            values: [[moment().day(1).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!T1`,
+                            values: [[moment().day(2).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!AC1`,
+                            values: [[moment().day(3).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!AL1`,
+                            values: [[moment().day(4).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!AU1`,
+                            values: [[moment().day(5).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!BD1`,
+                            values: [[moment().day(6).format("DD/MM/YY")]],
+                        }, {
+                            range: `Week ${week}!BM1`,
+                            values: [[moment().day(7).format("DD/MM/YY")]],
+                        }]
                     }
                 });
 
@@ -160,6 +189,8 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
                     var dt = moment(actualdate).format("MM/DD/YY HH:mm:ss");
                     var textdate = moment(actualdate).format('h:mm a');
 
+                    console.log(`${userExists} - ${`${msg.from.first_name} ${msg.from.last_name}`} | ${actualsheet.properties.title}!${workdays[dayoftheweek][indexOfCommand]}${userRow} | ${dt}`)
+
                     await spreadsheet.values.update({
                         spreadsheetId: workhoursheetid,
                         valueInputOption: "USER_ENTERED",
@@ -187,7 +218,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
     bot.on('message', async (msg) => {
         try {
-            const log = await fs.readFile('log.json');
+            var log = await fs.readFile('log.json');
             log = JSON.parse(log);
             log.push(msg);
             fs.writeFile("log.json", JSON.stringify(log));
