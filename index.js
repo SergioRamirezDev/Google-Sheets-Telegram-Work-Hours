@@ -142,10 +142,10 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             });
 
             var userRow = userExists + 4;
-            var workdays = [["C", "D", "E", "F"], ["H", "I", "J", "K"], ["M", "N", "O", "P"], ["R", "S", "T", "U"], ["W", "X", "Y", "Z"], ["AB", "AC", "AD", "AE"], ["AG", "AH", "AI", "AJ"]]
+            var workdays = [["C", "D", "E", "F", "G", "H"], ["L", "M", "N", "O", "P", "Q"], ["U", "V", "W", "X", "Y", "Z"], ["AD", "AE", "AF", "AG", "AH", "AI"], ["AM", "AN", "AO", "AP", "AQ", "AR"], ["AV", "AW", "AX", "AY", "AZ", "BA"], ["BE", "BF", "BG", "BH", "BI", "BJ"]]
             const dayoftheweek = moment().day() - 1;
-            const commands = ["/entrada", "/salida", "/horadecomida", "/descanso"];
-            const commandDescriptions = ["entrada", "salida", "comida", "descanso"];
+            const commands = ["/entrada", "/salida", "/comidasalida", "/comidaregreso", "/descansosalida", "/descansoregreso"];
+            const commandDescriptions = ["entrada", "salida", "comidasalida", "comidaregreso", "descansosalida", "descansoregreso"];
             var indexOfCommand = await commands.findIndex(text => text == msg.text);
             if (indexOfCommand != -1) {
                 worksheets = await spreadsheet.values.get({
@@ -187,7 +187,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
     bot.on('message', async (msg) => {
         try {
-            var log = await fs.readFile('log.json');
+            const log = await fs.readFile('log.json');
             log = JSON.parse(log);
             log.push(msg);
             fs.writeFile("log.json", JSON.stringify(log));
@@ -197,7 +197,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
         switch (msg.text) {
             case "/start":
-                var st = await bot.sendMessage(msg.chat.id, `Bienvenid@ ${msg.from.first_name} ${msg.from.last_name}.`);
+                await bot.sendMessage(msg.chat.id, `Bienvenid@ ${msg.from.first_name} ${msg.from.last_name}.`);
                 authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
                 break;
             case "/entrada":
@@ -206,15 +206,21 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             case "/salida":
                 authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
                 break;
-            case "/horadecomida":
+            case "/comidasalida":
                 authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
                 break;
-            case "/descanso":
+            case "/comidaregreso":
+                authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
+                break;
+            case "/descansosalida":
+                authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
+                break;
+            case "/descansoregreso":
                 authorize().then((auth) => createSpreadsheet(auth, msg, bot)).catch(console.error);
                 break;
             default:
-                var st = await bot.sendMessage(msg.chat.id, `Porfavor selecciona desde el menu.`);
-                var ph = await bot.sendPhoto(msg.chat.id, "./menu.jpg")
+                await bot.sendMessage(msg.chat.id, `Porfavor selecciona desde el menu.`);
+                await bot.sendPhoto(msg.chat.id, "./menu.jpg")
                 break;
         }
     });
