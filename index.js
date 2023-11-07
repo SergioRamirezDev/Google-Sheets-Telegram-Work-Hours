@@ -21,7 +21,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
     async function loadSavedCredentialsIfExist() {
         try {
-            console.log("loadSavedCredentialsIfExist")
+            console.log("loadSavedCredentialsIfExist",TOKEN_PATH)
             const content = await fs.readFile(TOKEN_PATH);
             const credentials = JSON.parse(content);
             console.log("credentials",credentials)
