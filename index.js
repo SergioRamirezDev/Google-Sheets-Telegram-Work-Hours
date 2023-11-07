@@ -49,6 +49,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
     async function authorize() {
         let client = await loadSavedCredentialsIfExist();
+        console.log("client", client);
         if (client) {
             return client;
         }
