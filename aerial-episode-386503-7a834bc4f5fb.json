@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "aerial-episode-386503",
+  "private_key_id": "7a834bc4f5fba5376e7e8cc60276da7ff332cb7d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDMZ3A1tY5pmvpd\n3ElnvLLqTAt/6c0dzWUZ0B4a6gfP9jgZt04PCjfGr+xGWgeHvrC1xvX9Wt7dx0rm\nkq4tCbL6CUnKcjzMmpn57BDjZde36e8skNvEVeBlU89vOIQi0Wy4cAUXH0e9mPjW\nmC0XNcxAp6oWzHsWl930sFXjcz5HHQVyynBRyl1BW8fMsqvkPuV6CgOrnBptXDnB\nNS6YqM26Zo/o+HQ8k8t4HaRIif4GMp3ezi6uzKkFmPAU1FAmFv8VWo4+p7qiT2Ca\nF7bTJckzC7bg6P/llMD42+b/7XBA58YrdinM0gI3Es6tbaozyFv4L2UHMFKciLoT\n6O3bgkrdAgMBAAECggEACyUHpfIGeAUSagww92Y/Ng2b4edIPvv8K25gudRxRRo2\nYFaRe7nxpRRh9EsD1pej0GFu95edB6gOUiiEtSFuf/oCKzbT0E8MnqcLm65pltY7\nK2mhheCtybCKYpTJBZH4FM1MxcA3m+OLi73D1ZxiDNNnb3NKMcbpe+YiZLKbnmpi\neBF1NEpgCVjNsjXwYBkP9h6EUnLgyVmjwgiKn6IBLmQjJ6WB/I3igZdE3/JzflMR\n5fuXrQ32P1ROvFlA8NeBrI5n4UBNXcGLEZN/d2+o9K2djyHRgHqRwhcnNJv/wJai\niY+EIu0qP4xtABPJIrJ3s9OpujtfwHU2r3nr4sN1kQKBgQDlAd9t7VSWEoTOvFay\nvyogMJXxCcLc8u7qDiRDGUGrWc2ObEyQa9/oMTbbyYjwKsaikrEN3K5y93pbZUEy\nUtWddiYZDmTnL9tyCiWxFiT/EAmijut1aDgG2PGUMFxC9+KgcgrdPnXWjoQu9S/9\nODPPx9jA9HSllUGRUEtEnca7rQKBgQDkfy4n04UIWD5DBFBA23jRBgCtYnKcqHsq\npbyjVxgf94J9Ec22yGtPAzbrOkrnpsJitfxN2ycy3TNxOqKpCh7CLMREyDjAa+wA\nP+o10NbZn5K15PUz7FCex/9LNzh01Tdum4WmVFfS109XYKLkhosUeCuvz/RB6mPl\nWhhlb22x8QKBgB9xIGIRYbmxFTblOOoVwQzmXs/XTT/UwuSzyFrGDvQdwlE5oVF6\n3iUdDLEkfH6tANS1W0XR9MmoHM6LmmX0ZYvW+ugZx9TOB00jA4XKyo2SgCAni0B1\nbKvUAWcdNK2lJyJsRf2WY8tvicqAs3QK0WJHyATGC3XohjYTViI3n1+JAoGBAJ9n\nejOehHhF12m5YKNeePKZVW+f9oUDpKkj5m2tHM9wREAsY27YcsQ0YePITuk8lO94\nNgO6l6YMWw7q8P8saDjeMi4p4C2dHI8wB5xzjO9VO2xZxhXrDnM24wr+Awy+kmU/\nagWXYY1dV6SFbh4vHmexTgjg8m3prrcaG1roWYaBAoGAJ9YKF+WKXXBP1lFMuZCL\nCw2yBTRKnBbjon+XBhKc2xMrIerBOFa9n5DdwdV65h7K4u198vIK/cH7ngsIzbFS\nO6jzKbgLHPSrHzyUeLcX0LtlyKsXQLyy3B5gp/w87RTSAjrTJ63xIzKPdWKwzUt0\nZ+mxDCvwpFPrnPlZMXXZ4Ac=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ticketon-horario@aerial-episode-386503.iam.gserviceaccount.com",
+  "client_id": "110301049166569828576",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ticketon-horario%40aerial-episode-386503.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

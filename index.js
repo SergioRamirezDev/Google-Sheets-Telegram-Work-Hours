@@ -10,24 +10,14 @@ const { google } = require('googleapis');
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const TOKEN_PATH = path.join(proc.cwd(), 'token.json');
 const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
+
 (async function () {
-    var google_c = await fs.readFile(CREDENTIALS_PATH);
-    console.log("CREDENTIALS_PATH", JSON.parse(google_c))
-    var log = await fs.readFile('log.json');
-    log = JSON.parse(log);
-    const bot = new TelegramBot(token, {
-        polling: true
-    });
+    const bot = new TelegramBot(token, { polling: true });
 
     async function loadSavedCredentialsIfExist() {
         try {
-            console.log("loadSavedCredentialsIfExist", TOKEN_PATH)
-            if (!fs.existsSync(TOKEN_PATH)) {
-                return null;
-            }
             const content = await fs.readFile(TOKEN_PATH);
             const credentials = JSON.parse(content);
-            console.log("credentials", credentials)
             return google.auth.fromJSON(credentials);
         } catch (err) {
             return null;
@@ -49,16 +39,13 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
     async function authorize() {
         let client = await loadSavedCredentialsIfExist();
-        console.log("client", client);
         if (client) {
             return client;
         }
-        console.log("authenticate")
         client = await authenticate({
             scopes: SCOPES,
             keyfilePath: CREDENTIALS_PATH,
         });
-        console.log('Tokens:', client.credentials);
         if (client.credentials) {
             await saveCredentials(client);
         }
@@ -76,8 +63,6 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             var sheets = await spreadsheet.get({
                 spreadsheetId: workhoursheetid
             });
-
-            console.log(sheets)
 
             var sheetIndex = await sheets.data.sheets.findIndex(sh => sh.properties.sheetId == week);
 
@@ -232,8 +217,9 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
     });
 
     bot.on('message', async (msg) => {
-        console.log(msg)
         try {
+            var log = await fs.readFile('log.json');
+            log = JSON.parse(log);
             log.push(msg);
             fs.writeFile("log.json", JSON.stringify(log));
         } catch (error) {
