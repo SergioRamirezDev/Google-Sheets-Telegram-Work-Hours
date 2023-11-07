@@ -221,7 +221,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
     });
 
     bot.on('message', async (msg) => {
-       
+       console.log(msg)
         try {
             log.push(msg);
             fs.writeFile("log.json", JSON.stringify(log));
