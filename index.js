@@ -57,8 +57,8 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
         client = await authenticate({
             scopes: SCOPES,
             keyfilePath: CREDENTIALS_PATH,
-        }).then(res => console.log(res)).catch(err => console.log(err));
-        console.log('Tokens:', localAuth.credentials);
+        });
+        console.log('Tokens:', client.credentials);
         if (client.credentials) {
             await saveCredentials(client);
         }
