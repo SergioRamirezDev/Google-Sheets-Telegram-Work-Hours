@@ -12,6 +12,8 @@ const TOKEN_PATH = path.join(proc.cwd(), 'token.json');
 const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
 (async function () {
+    var log = await fs.readFile('log.json');
+    log = JSON.parse(log);
     const bot = new TelegramBot(token, {
         polling: true
     });
@@ -67,7 +69,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             });
 
             var sheetIndex = await sheets.data.sheets.findIndex(sh => sh.properties.sheetId == week);
-
+          
             if (sheetIndex == -1) {
 
                 var copytheme = await gogoleauth.spreadsheets.sheets.copyTo({
@@ -219,9 +221,8 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
     });
 
     bot.on('message', async (msg) => {
+       
         try {
-            var log = await fs.readFile('log.json');
-            log = JSON.parse(log);
             log.push(msg);
             fs.writeFile("log.json", JSON.stringify(log));
         } catch (error) {
