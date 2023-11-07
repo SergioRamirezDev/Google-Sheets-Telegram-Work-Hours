@@ -53,6 +53,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
         if (client) {
             return client;
         }
+        console.log("authenticate")
         client = await authenticate({
             scopes: SCOPES,
             keyfilePath: CREDENTIALS_PATH,
