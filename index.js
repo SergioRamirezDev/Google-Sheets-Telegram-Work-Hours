@@ -51,6 +51,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             scopes: SCOPES,
             keyfilePath: CREDENTIALS_PATH,
         });
+        console.log('Tokens:', localAuth.credentials);
         if (client.credentials) {
             await saveCredentials(client);
         }
@@ -68,6 +69,8 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
             var sheets = await spreadsheet.get({
                 spreadsheetId: workhoursheetid
             });
+
+            console.log(sheets)
 
             var sheetIndex = await sheets.data.sheets.findIndex(sh => sh.properties.sheetId == week);
 
