@@ -13,9 +13,7 @@ const CREDENTIALS_PATH = path.join(proc.cwd(), 'credentials.json');
 
 (async function () {
     const bot = new TelegramBot(token, {
-        polling: true, webHook: {
-            port: 3002
-        }
+        polling: true
     });
 
     async function loadSavedCredentialsIfExist() {
